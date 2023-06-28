@@ -1,0 +1,65 @@
+@import '~bootstrap/scss/bootstrap';
+
+.profile {
+    position: relative;
+    height: 75vw;
+    width: 75vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    max-height: 40rem;
+    max-width: 40rem;
+}
+
+.profile > img{
+    border-radius: 14px;
+}
+
+.profile .profile-img {
+    height: 80vw;
+    max-height: 45rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 992px) {
+    .profile {
+        height: 40vw;
+        width: 40vw;
+    }
+
+    .profile .profile-img {
+        height: 45vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile {
+        height: 35vw;
+        width: 35vw;
+    }
+
+    .profile .profile-img {
+        height: 40vw;
+    }
+}
+
+.bg-gradient-primary-to-secondary {
+    background: #1e30f3;
+    background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.img-fluid{
+    width: 40%;
+}
+
+.desc{
+    width: 60%;
+}
