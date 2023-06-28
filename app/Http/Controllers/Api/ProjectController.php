@@ -13,11 +13,11 @@ class ProjectController extends Controller
 
 //oppure per avere anche le relazioni
 
-$projects = Project::with('type','technologies')->get();
+	//$projects = Project::with('type','technologies')->get();
 
 //oppure per avere tot(3) elementi per pagina 
 
-	//$projects = Project::with('category','tags')->paginate(3);
+	$projects = Project::with('type', 'technologies')->paginate(3);
 
 	return response()->json([
 		'success' => true,
