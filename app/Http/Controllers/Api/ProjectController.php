@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 	 //$projects = Project::all();
 
 //oppure per avere anche le relazioni
@@ -17,7 +17,16 @@ class ProjectController extends Controller
 
 //oppure per avere tot(3) elementi per pagina 
 
-	$projects = Project::with('type', 'technologies')->paginate(3);
+	if ($request->has('type_id')) {
+		
+		$projects = Project::with('type', 'technologies')->where('type_id', $request->type_id)->paginate(3);
+
+	} else {
+
+		$projects = Project::with('type', 'technologies')->paginate(3);
+
+	}
+
 
 	return response()->json([
 		'success' => true,
